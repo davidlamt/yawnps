@@ -4,8 +4,13 @@
   "description": "🥱, please summarize",
   "main": "index.js",
   "scripts": {
+    "build": "tsc ./src/index.ts --outDir ./lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^14.14.10",
+    "typescript": "^4.1.2"
+  }
 }
