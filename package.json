@@ -12,6 +12,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^14.14.10",
+    "@types/node-fetch": "^2.5.7",
     "@typescript-eslint/eslint-plugin": "^4.9.1",
     "@typescript-eslint/parser": "^4.9.1",
     "eslint": "^7.15.0",
@@ -29,5 +30,9 @@
   },
   "lint-staged": {
     "*.ts": "eslint --cache --fix"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "unfluff": "^3.2.0"
   }
 }
