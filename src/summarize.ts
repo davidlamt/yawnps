@@ -10,12 +10,14 @@ export const summarize = async ({ url }: { url: string }): Promise<void> => {
   }
 };
 
-const getUrlContent = async (url: string): Promise<string> => {
+export const getUrlContent = async (url: string): Promise<string> => {
+  let data: { text: string };
   let html: string;
 
   try {
     const response = await fetch(url);
     html = await response.text();
+    data = extractor(html);
   } catch (err) {
     if (err?.code === 'ENOTFOUND') {
       throw new Error(`Cannot find ${url}`);
@@ -23,8 +25,6 @@ const getUrlContent = async (url: string): Promise<string> => {
 
     throw err;
   }
-
-  const data = extractor(html);
 
   return data.text;
 };
